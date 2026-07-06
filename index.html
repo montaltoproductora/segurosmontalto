@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seguros Montalto — Productora Asesora de Seguros</title>
+<meta name="description" content="Liliana Montalto, asesora de seguros. Asesoría integral con un enfoque profesional en seguros generales, ART y salud.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1a2744;
+  --navy-dark: #111b33;
+  --gold: #c8922a;
+  --gold-light: #d4a84b;
+  --white: #ffffff;
+  --off-white: #f8f8f6;
+  --light-gray: #f0f0ed;
+  --text: #2d2d2d;
+  --muted: #666;
+  --border: #e0e0dc;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+/* ── HEADER / NAV ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--navy);
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0 1.2rem;
+  line-height: 75px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s, background 0.2s;
+}
+
+nav ul li a:hover {
+  color: var(--gold-light);
+  background: rgba(255,255,255,0.05);
+}
+
+.nav-cta a {
+  background: var(--gold) !important;
+  color: white !important;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+}
+
+.nav-cta a:hover { background: var(--gold-light) !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* ── HERO ── */
+#inicio {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(26,39,68,0.88) 0%, rgba(17,27,51,0.75) 100%),
+              url('images/hero-bg.jpg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 120px 5% 80px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title strong {
+  font-weight: 700;
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2.5rem;
+  max-width: 52ch;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border-radius: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: white;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 146, 42, 0.4);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.6);
+  margin-left: 1rem;
+}
+
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.hero-scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.3);
+  margin: 8px auto 0;
+  animation: scrollline 2s ease-in-out infinite;
+}
+
+@keyframes scrollline {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+/* ── SECTIONS ── */
+section { padding: 6rem 5%; }
+
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--navy);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.section-divider {
+  width: 50px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+/* ── SOBRE MÍ ── */
+#sobre-mi {
+  background: var(--off-white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.about-image::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: 15px;
+  bottom: 15px;
+  border: 3px solid var(--gold);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+.about-contact {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.about-contact h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.about-phone {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.about-phone:hover { color: var(--gold); }
+
+/* ── SERVICIOS ── */
+#servicios {
+  background: var(--white);
+}
+
+.servicios-inner { max-width: 1100px; margin: 0 auto; }
+
+.servicios-header { text-align: center; margin-bottom: 4rem; }
+.servicios-header .section-divider { margin: 0 auto 1.5rem; }
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.servicio-card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  background: var(--white);
+}
+
+.servicio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.servicio-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.servicio-body {
+  padding: 1.75rem;
+}
+
+.servicio-body h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gold);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.accordion-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.75rem 0;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.accordion-btn:hover { color: var(--gold); }
+
+.accordion-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  transition: background 0.2s, transform 0.25s;
+}
+
+.accordion-btn.open .accordion-icon {
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.accordion-content.open {
+  max-height: 300px;
+  padding-bottom: 0.75rem;
+}
+
+/* ── ASEGURADORAS ── */
+#aseguradoras {
+  background: var(--navy);
+  text-align: center;
+}
+
+#aseguradoras .section-title { color: white; }
+
+.aseguradoras-inner { max-width: 1000px; margin: 0 auto; }
+
+.aseguradoras-imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.aseguradoras-imgs img {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+}
+
+.aseguradoras-faq {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.aseguradoras-faq p { margin-bottom: 1rem; }
+.aseguradoras-faq strong { color: var(--gold-light); }
+
+/* ── CONTACTO ── */
+#contacto {
+  background: var(--off-white);
+}
+
+.contacto-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contacto-info p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+.contact-item-text span {
+  display: block;
+  font-size: 0.75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.contact-item-text a, .contact-item-text p {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.contact-item-text a:hover { color: var(--gold); }
+
+/* ── FORMULARIO ── */
+.form-group { margin-bottom: 1.25rem; }
+
+.form-group label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: white;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+.form-success {
+  display: none;
+  background: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* ── MAPA ── */
+.mapa-section { padding: 0; }
+
+.mapa-section iframe {
+  width: 100%;
+  height: 380px;
+  border: none;
+  display: block;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 2rem 5%;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo img { height: 40px; filter: brightness(0) invert(1); }
+
+.footer-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  background: #25D366;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.footer-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  width: 55px;
+  height: 55px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.wa-float svg { width: 28px; height: 28px; fill: white; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav ul { display: none; position: absolute; top: 75px; left: 0; right: 0; background: var(--navy-dark); flex-direction: column; padding: 1rem 0; gap: 0; }
+  nav ul.open { display: flex; }
+  nav ul li a { line-height: 1; padding: 1rem 5%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .hamburger { display: flex; }
+  .about-grid, .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .servicios-grid { grid-template-columns: 1fr; }
+  .about-image::before { display: none; }
+  #sobre-mi .about-image { max-width: 400px; margin: 0 auto; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 4rem 5%; }
+  .btn-outline-white { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#inicio" class="logo">
+    <img src="images/logo.png" alt="Seguros Montalto">
+  </a>
+  <nav id="mainnav">
+    <ul id="navmenu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li class="nav-cta"><a href="https://wa.me/541126540567" target="_blank">WhatsApp</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Productora Asesora de Seguros</p>
+    <h1 class="hero-title">
+      Asesoría integral<br>con un enfoque<br>
+      <strong>profesional</strong>
+    </h1>
+    <p class="hero-subtitle">Protección completa, asesoramiento confiable. Soluciones a medida para tu vida, tu familia y tu empresa.</p>
+    <a href="#contacto" class="btn btn-gold">Contactame</a>
+    <a href="#servicios" class="btn btn-outline-white">Ver servicios</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="about-grid">
+    <div class="about-image">
+      <img src="images/liliana.jpg" alt="Liliana Montalto">
+    </div>
+    <div class="about-text">
+      <p class="section-label">Sobre mí</p>
+      <h2 class="section-title">Soy Liliana Montalto</h2>
+      <div class="section-divider"></div>
+      <p>Asesora de seguros comprometida con brindarte tranquilidad y seguridad en cada paso de tu vida.</p>
+      <p>Mi enfoque se centra en la integralidad y la atención personalizada, entendiendo que cada individuo, familia o empresa, tienen necesidades únicas.</p>
+      <p>Mi misión es más que ofrecer seguros; se trata de construir relaciones sólidas basadas en la confianza mutua.</p>
+      <p>Te invito a explorar los beneficios de trabajar conmigo y descubrir cómo podemos construir, juntos, un futuro seguro.</p>
+      <div class="about-contact">
+        <h4>Comunicate conmigo al:</h4>
+        <a href="https://wa.me/541126540567" class="about-phone">11 - 2654 - 0567</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="servicios-inner">
+    <div class="servicios-header">
+      <p class="section-label">Lo que ofrezco</p>
+      <h2 class="section-title">Servicios</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="servicios-grid">
+
+      <!-- SEGUROS GENERALES -->
+      <div class="servicio-card">
+        <img class="servicio-img" src="images/automotor.jpg" alt="Seguros Generales">
+        <div class="servicio-body">
+          <h3>Seguros Generales</h3>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Seguro de autos y motos
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Amplia variedad de coberturas para la protección de tus vehículos particulares y flotas.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Seguro de hogar
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Un seguro de hogar es la mejor opción para protegerte de los posibles daños que le puedan ocurrir a tu hogar y a tus bienes con servicios de asistencia al hogar que facilitan tu vida.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Seguro de comercio
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Protege todos los aspectos de un negocio. Cubre daños a la propiedad, responsabilidad civil, pérdida de ingresos y otros riesgos comerciales.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Seguro de accidentes personales
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Proporciona protección financiera en caso de lesiones o fallecimiento causados por accidentes.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Embarcaciones
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Cobertura de acuerdo a tus necesidades para motos de agua, lanchas y veleros.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Caución
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Es una garantía que cubre lo que hubiera que pagar en caso de incumplimiento de las obligaciones por parte del inquilino ante cualquier dificultad financiera que pudiera llegar a tener.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ART -->
+      <div class="servicio-card">
+        <img class="servicio-img" src="images/art.jpg" alt="ART">
+        <div class="servicio-body">
+          <h3>ART</h3>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Para el empleado
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Garantiza cobertura en caso de accidentes laborales o enfermedades relacionadas con el trabajo, asegurando atención médica, indemnizaciones por incapacidad y rehabilitación.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Para el empleador
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              El seguro de ART protege contra reclamaciones legales por accidentes laborales, cubriendo los costos médicos y las compensaciones económicas.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Para el entorno laboral
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              El seguro de ART beneficia a todo el entorno laboral al fomentar prácticas seguras y la prevención de accidentes. Mejora la relación empleador-empleado al garantizar el cuidado y la atención adecuada en caso de lesiones laborales.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALUD -->
+      <div class="servicio-card">
+        <img class="servicio-img" src="images/salud.jpg" alt="Salud">
+        <div class="servicio-body">
+          <h3>Salud</h3>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Coberturas individuales
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Las coberturas de salud para individuos ofrecen atención médica personalizada, cubriendo consultas, tratamientos y hospitalización. Brindan tranquilidad al asegurar el acceso a servicios de calidad.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+              Coberturas corporativas
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Las coberturas de salud corporativas ofrecen planes flexibles que benefician tanto a la empresa como a sus colaboradores, promoviendo la salud preventiva y asegurando un equipo fuerte y productivo.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ASEGURADORAS -->
+<section id="aseguradoras">
+  <div class="aseguradoras-inner">
+    <p class="section-label" style="color: var(--gold-light);">Nuestras alianzas</p>
+    <h2 class="section-title">Trabajan con nosotros</h2>
+    <div class="section-divider" style="margin: 0 auto 2.5rem;"></div>
+    <div class="aseguradoras-imgs">
+      <img src="images/preferentes.png" alt="Compañías de seguros generales">
+      <img src="images/logos-salud.png" alt="Compañías de salud">
+    </div>
+    <div class="aseguradoras-faq">
+      <p><strong>¿Por qué trabajamos con diferentes empresas aseguradoras?</strong><br>
+      Buscamos garantizar independencia y la búsqueda del mejor precio atendiendo a las necesidades de cada caso en particular.</p>
+      <p><strong>¿Dónde averiguar la solvencia de una aseguradora?</strong><br>
+      Visitando la página de la Superintendencia de Seguros de la Nación accederá a toda la información y listado de compañías de seguros.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<div class="mapa-section">
+  <iframe
+    loading="lazy"
+    src="https://maps.google.com/maps?q=Venezuela%203150%2C%20Villa%20Martelli&t=m&z=15&output=embed&iwloc=near"
+    title="Venezuela 3150, Villa Martelli"
+    aria-label="Ubicación: Venezuela 3150, Villa Martelli"
+  ></iframe>
+</div>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-info">
+      <p class="section-label">Hablemos</p>
+      <h2 class="section-title">Contacto</h2>
+      <div class="section-divider"></div>
+      <p>Dejame tu mensaje y te contesto a la brevedad. También podés comunicarte directamente por WhatsApp o por mail.</p>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 512 512"><path d="M476.5 22.9L382.3 1.2c-21-.5-38.4 13.4-44.7 33.9l-32 109.3c-5.8 19.7.4 41 16.1 54.1l47.5 39.5c-35.3 62.3-81.5 108.6-143.8 143.8l-39.5-47.5c-13.2-15.7-34.4-21.9-54.1-16.1L22.5 349.5c-20.7 6.4-34.5 23.9-33.9 44.9l21.7 94.2C16.7 508.3 35.7 522 56 522 338.9 522 512 354.5 512 56c0-20.3-13.7-39.3-35.5-33.1z"></path></svg>
+        </div>
+        <div class="contact-item-text">
+          <span>Teléfono / WhatsApp</span>
+          <a href="https://wa.me/541126540567" target="_blank">11 - 2654 - 0567</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 512 512"><path d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464z"></path></svg>
+        </div>
+        <div class="contact-item-text">
+          <span>Email</span>
+          <a href="mailto:liliana.montalto@assetbroker.com.ar">liliana.montalto@assetbroker.com.ar</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 384 512"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg>
+        </div>
+        <div class="contact-item-text">
+          <span>Dirección</span>
+          <p>Venezuela 3150, B1603 Villa Martelli</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacto-form">
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label for="nombre">Nombre y apellido *</label>
+          <input type="text" id="nombre" required placeholder="Tu nombre completo">
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required placeholder="tu@email.com">
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" required placeholder="Contame en qué puedo ayudarte..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">Enviar mensaje</button>
+        <div class="form-success" id="formSuccess">
+          ¡Gracias por contactarme! Te contesto a la brevedad.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="images/logo.png" alt="Seguros Montalto">
+  </div>
+  <p class="footer-tagline">Protección completa, asesoramiento confiable</p>
+  <p>© 2025 Liliana Montalto — Productora Asesora de Seguros | Venezuela 3150, Villa Martelli</p>
+  <br>
+  <a href="https://wa.me/541126540567" target="_blank" class="footer-wa">
+    <svg viewBox="0 0 448 512" width="18" height="18" fill="white"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    Escribime por WhatsApp
+  </a>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/541126540567" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+</a>
+
+<script>
+function toggleNav() {
+  document.getElementById('navmenu').classList.toggle('open');
+}
+
+// Close nav on link click
+document.querySelectorAll('#navmenu a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('navmenu').classList.remove('open');
+  });
+});
+
+// Accordion
+function toggleAccordion(btn) {
+  var content = btn.nextElementSibling;
+  var isOpen = btn.classList.contains('open');
+
+  // Close all in same card
+  var card = btn.closest('.servicio-card');
+  card.querySelectorAll('.accordion-btn').forEach(function(b) {
+    b.classList.remove('open');
+    b.nextElementSibling.classList.remove('open');
+  });
+
+  if (!isOpen) {
+    btn.classList.add('open');
+    content.classList.add('open');
+  }
+}
+
+// Contact form — static fallback since GitHub Pages has no backend
+function submitForm(e) {
+  e.preventDefault();
+  var nombre = document.getElementById('nombre').value;
+  var email = document.getElementById('email').value;
+  var mensaje = document.getElementById('mensaje').value;
+
+  // Open mailto as fallback
+  var subject = encodeURIComponent('Consulta web de ' + nombre);
+  var body = encodeURIComponent('Nombre: ' + nombre + '\nEmail: ' + email + '\n\nMensaje:\n' + mensaje);
+  window.location.href = 'mailto:liliana.montalto@assetbroker.com.ar?subject=' + subject + '&body=' + body;
+
+  document.getElementById('formSuccess').style.display = 'block';
+  document.getElementById('contactForm').reset();
+}
+
+// Smooth scroll offset for fixed header
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      var offset = 75;
+      var top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
