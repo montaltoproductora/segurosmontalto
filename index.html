@@ -957,7 +957,7 @@ footer p {
     </div>
 
     <div class="contacto-form">
-      <form id="contactForm" onsubmit="submitForm(event)">
+      <form id="contactForm" action="https://formspree.io/f/xdarjlag" method="POST">
         <div class="form-group">
           <label for="nombre">Nombre y apellido *</label>
           <input type="text" id="nombre" required placeholder="Tu nombre completo">
@@ -971,9 +971,6 @@ footer p {
           <textarea id="mensaje" required placeholder="Contame en qué puedo ayudarte..."></textarea>
         </div>
         <button type="submit" class="btn btn-gold">Enviar mensaje</button>
-        <div class="form-success" id="formSuccess">
-          ¡Gracias por contactarme! Te contesto a la brevedad.
-        </div>
       </form>
     </div>
   </div>
@@ -1029,20 +1026,7 @@ function toggleAccordion(btn) {
 }
 
 // Contact form — static fallback since GitHub Pages has no backend
-function submitForm(e) {
-  e.preventDefault();
-  var nombre = document.getElementById('nombre').value;
-  var email = document.getElementById('email').value;
-  var mensaje = document.getElementById('mensaje').value;
 
-  // Open mailto as fallback
-  var subject = encodeURIComponent('Consulta web de ' + nombre);
-  var body = encodeURIComponent('Nombre: ' + nombre + '\nEmail: ' + email + '\n\nMensaje:\n' + mensaje);
-  window.location.href = 'mailto:liliana.montalto@assetbroker.com.ar?subject=' + subject + '&body=' + body;
-
-  document.getElementById('formSuccess').style.display = 'block';
-  document.getElementById('contactForm').reset();
-}
 
 // Smooth scroll offset for fixed header
 document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
